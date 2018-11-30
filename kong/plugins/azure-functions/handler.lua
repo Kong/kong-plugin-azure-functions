@@ -125,9 +125,7 @@ function azure:access(config)
     response_headers["Keep-Alive"] = ""
     response_headers["Proxy-Connection"] = ""
     response_headers["Upgrade"] = ""
-    if response_headers["Transfer-Encoding"] ~= "trailers" then
-      response_headers["Transfer-Encoding"] = ""
-    end
+    response_headers["Transfer-Encoding"] = ""
   end
 
   ok, err = client:set_keepalive(config.keepalive)

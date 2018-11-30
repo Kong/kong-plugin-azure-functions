@@ -121,11 +121,11 @@ function azure:access(config)
   local response_content = res:read_body()
 
   if var.http2 then
-    response_headers["Connection"] = ""
-    response_headers["Keep-Alive"] = ""
-    response_headers["Proxy-Connection"] = ""
-    response_headers["Upgrade"] = ""
-    response_headers["Transfer-Encoding"] = ""
+    response_headers["Connection"] = nil
+    response_headers["Keep-Alive"] = nil
+    response_headers["Proxy-Connection"] = nil
+    response_headers["Upgrade"] = nil
+    response_headers["Transfer-Encoding"] = nil
   end
 
   ok, err = client:set_keepalive(config.keepalive)
